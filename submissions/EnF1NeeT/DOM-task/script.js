@@ -1,8 +1,14 @@
+<<<<<<< HEAD
+const postsList  = [
+||||||| 76728da
 const postsLst = [
+=======
+const postsList = [
+>>>>>>> 2707486fe7b80d419dcc0d7f8c3d8c626d02b823
     {
         id: '1',
         topzoneImg:'./img/2.png',
-        p:'@Jonnie',
+        nickname:'@Jonnie',
         imgSrc: './img/post1.jpg',
         imgSrc2: './img/post2.jpg',
         imgSrc3: './img/post3.jpg',
@@ -11,7 +17,7 @@ const postsLst = [
     {
         id: '2',
         topzoneImg:'./img/3.png',
-        p:'@Mike',
+        nickname:'@Mike',
         imgSrc: './img/post5.jpg',
         imgSrc2: './img/post6.jpg',
         imgSrc3: './img/post7.jpg',
@@ -20,7 +26,7 @@ const postsLst = [
     {
         id: '3',
         topzoneImg:'./img/1.png',
-        p:'@Kate',
+        nickname:'@Kate',
         imgSrc: './img/post9.jpg',
         imgSrc2: './img/post10.jpg',
         imgSrc3: './img/post11.jpg',
@@ -29,7 +35,7 @@ const postsLst = [
     {
         id: '4',
         topzoneImg:'./img/4.png',
-        p:'@Jack',
+        nickname:'@Jack',
         imgSrc: './img/post13.jpg',
         imgSrc2: './img/post14.jpg',
         imgSrc3: './img/post15.jpg',
@@ -41,22 +47,30 @@ const postsLst = [
 const btnContainer = document.querySelector('.friends');
 const mainContainer = document.querySelector('.posts');
 
-btnContainer.addEventListener('click', addContent);
+btnContainer.addEventListener('click', targetContent );
 
-function addContent({ target }) {
+function targetContent ({ target }) {
     if (target.id) {
+<<<<<<< HEAD
+        const contant = postsList.find((post) => post.id === target.id);
+        mainContainer.innerHTML = postGenerator(contant);
+||||||| 76728da
         const contant = postsLst.find((pos) => pos.id === target.id);
         mainContainer.innerHTML = post(contant);
+=======
+        const contant = postsList.find((post) => post.id === target.id);
+        mainContainer.innerHTML = post(contant);
+>>>>>>> 2707486fe7b80d419dcc0d7f8c3d8c626d02b823
     }
 };
 
-function post({ imgSrc, imgSrc2, imgSrc3, imgSrc4, p, topzoneImg}) {
+function postGenerator({ imgSrc, imgSrc2, imgSrc3, imgSrc4, nickname, topzoneImg}) {
 
     return (
         `<article class="post">
             <div class="topzone">
                 <img class="topzoneImg" src="${topzoneImg}" alt="postImg">
-                <p>${p}</p>
+                <p>${nickname}</p>
             </div>
             <div class="postImg">
                 <img src="${imgSrc}" class="postImg" alt="postImg">
@@ -80,7 +94,7 @@ function post({ imgSrc, imgSrc2, imgSrc3, imgSrc4, p, topzoneImg}) {
         <article class="post">
             <div class="topzone">
                 <img class="topzoneImg" src="${topzoneImg}" alt="postImg">
-                <p>${p}</p>
+                <p>${nickname}</p>
             </div>
             <div class="postImg">
                 <img src="${imgSrc2}" class="postImg" alt="postImg">
@@ -104,7 +118,7 @@ function post({ imgSrc, imgSrc2, imgSrc3, imgSrc4, p, topzoneImg}) {
         <article class="post">
             <div class="topzone">
                 <img class="topzoneImg" src="${topzoneImg}" alt="postImg">
-                <p>${p}</p>
+                <p>${nickname}</p>
             </div>
             <div class="postImg">
                 <img src="${imgSrc3}" class="postImg" alt="postImg">
@@ -129,7 +143,7 @@ function post({ imgSrc, imgSrc2, imgSrc3, imgSrc4, p, topzoneImg}) {
         <article class="post">
             <div class="topzone">
                 <img class="topzoneImg" src="${topzoneImg}" alt="postImg">
-                <p>${p}</p>
+                <p>${nickname}</p>
             </div>
             <div class="postImg">
                 <img src="${imgSrc4}" class="postImg" alt="postImg">
@@ -153,4 +167,3 @@ function post({ imgSrc, imgSrc2, imgSrc3, imgSrc4, p, topzoneImg}) {
         
     );
 };
-
